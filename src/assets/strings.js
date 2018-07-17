@@ -18,7 +18,7 @@ let Strings = new LocalizedStrings({
     "da":{
 
         // App.js -> Greeter
-        "txt_hello_world": "Ohøj skipper"
+        "txt_hello_world": "src/components/App.js"
 
     }
     //#endregion language : DANISH
