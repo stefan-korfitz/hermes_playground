@@ -5,12 +5,9 @@
  */
 
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
+
+import Strings from './src/assets/strings';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -25,7 +22,7 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+            {Strings.txt_hello_world}
         </Text>
         <Text style={styles.instructions}>
           To get started, edit App.js
