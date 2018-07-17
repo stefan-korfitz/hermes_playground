@@ -21,11 +21,6 @@ export class LoginNumber extends Component {
         header: null ,
     };
 
-    // click metode for Next_svg
-    callFun = () => {
-        alert("Image Clicked!!!");
-    };
-
     render() {
         return (
             <View>
@@ -40,7 +35,9 @@ export class LoginNumber extends Component {
 
                 {/* comment */}
                 <View style={styles.Header}>
-                    <Brand_logo style={styles.Header_content}/>
+                    <View style={styles.Header_content}>
+                        <Brand_logo/>
+                    </View>
                 </View>
 
                 {/* comment */}
@@ -50,9 +47,6 @@ export class LoginNumber extends Component {
                         placeholder="Type here to translate!"
                         onChangeText={(text) => this.setState({text})}
                     />
-                    {/* <Text style={{padding: 10, fontSize: 42}}>
-            {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
-          </Text> */}
                 </View>
 
                 {/* rendering assets->img->next.js */}
@@ -60,11 +54,6 @@ export class LoginNumber extends Component {
                     activeOpacity = { .7 } onPress={() => this.props.navigation.navigate('LoginSms')}>
                         <Next_svg/>
                 </TouchableOpacity>
-
-                {/* comment */}
-                {/*<View style={styles.BtnForward}>*/}
-                    {/*<Button onPress={() => this.props.navigation.navigate('LoginSms')} title="gå til sms"/>*/}
-                {/*</View>*/}
 
                 {/* comment */}
                 <Text style={{padding: 25.0, alignSelf: 'center'}}>

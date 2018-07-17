@@ -1,9 +1,12 @@
 import React from 'react';
 import { Component } from 'react';
-import { StyleSheet, View, Image, Text, TextInput, Button, StatusBar } from 'react-native';
+import { StyleSheet, View, Image, Text, TextInput, Button, TouchableOpacity, StatusBar } from 'react-native';
 
 import Colors from '../assets/colors';
 import Strings from '../assets/strings';
+
+import Brand_logo from '../assets/images/fullrate/brand_logo';
+import Next_svg from '../assets/icons/fullrate/next';
 
 export class LoginSms extends Component {
 
@@ -32,9 +35,9 @@ export class LoginSms extends Component {
 
                 {/* comment */}
                 <View style={styles.Header}>
-                    <Image style={styles.Header_content}
-                        //source={require('../../assets/img/fullrate_logo.png')}
-                    />
+                    <View style={styles.Header_content}>
+                        <Brand_logo/>
+                    </View>
                 </View>
 
                 {/* comment */}
@@ -44,15 +47,13 @@ export class LoginSms extends Component {
                         placeholder="Type here to translate!"
                         onChangeText={(text) => this.setState({text})}
                     />
-                    <Text style={{padding: 10, fontSize: 42}}>
-                        {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
-                    </Text>
                 </View>
 
-                {/* comment */}
-                <View style={styles.BtnForward}>
-                    <Button onPress={() => this.props.navigation.navigate('Main')} title="gå til main"/>
-                </View>
+                {/* rendering assets->img->next.js */}
+                <TouchableOpacity style={styles.BtnForward}
+                    activeOpacity = { .7 } onPress={() => this.props.navigation.navigate('Main')}>
+                        <Next_svg/>
+                </TouchableOpacity>
 
                 {/* comment */}
                 <Text style={{padding: 25.0, alignSelf: 'center'}}>
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     BtnForward: {
-        backgroundColor: Colors.red,
+        alignSelf: 'center',
     },
 });
 //#endregion StyleSheet
